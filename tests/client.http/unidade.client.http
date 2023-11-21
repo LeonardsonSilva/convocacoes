@@ -1,0 +1,15 @@
+@baseUrl = http://localhost:8080
+
+
+# @name list_unidades
+GET {{baseUrl}}/unidades
+
+###
+
+# @name create_unidade
+POST {{baseUrl}}/unidades
+Content-Type: application/json
+
+{
+    "nome": "Sede"
+}

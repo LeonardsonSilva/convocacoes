@@ -9,21 +9,37 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-// import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
 import com.defensoria.convocacao.entities.Unidade;
 import com.defensoria.convocacao.repositories.UnidadeRepository;
+import com.defensoria.convocacao.useCases.CreateUnidadeUseCase;
 
-// @RequestMapping("")
 @RestController
+@RequestMapping("/unidades")
 public class UnidadeController {
     @Autowired
     UnidadeRepository unidadeRepository;
 
-    @GetMapping("/unidades")
+    @Autowired
+    private CreateUnidadeUseCase createUnidadeUseCase;
+
+    @PostMapping
+    public ResponseEntity<Object> create(@RequestBody Unidade unidade) {
+        try {
+            this.createUnidadeUseCase.execute(unidade);
+            return ResponseEntity.status(HttpStatus.CREATED).build();
+        } catch (Exception error) {
+            return ResponseEntity.badRequest().body(error.getMessage());
+        }
+    }
+
+    @GetMapping
     public ResponseEntity<List<Unidade>> getAllUnidades() {
         List<Unidade> unidades = unidadeRepository.findAll();
         if(!unidades.isEmpty()){
