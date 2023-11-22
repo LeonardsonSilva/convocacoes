@@ -1,5 +1,7 @@
 package com.defensoria.convocacao.useCases;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,12 +9,13 @@ import com.defensoria.convocacao.entities.Unidade;
 import com.defensoria.convocacao.repositories.UnidadeRepository;
 
 @Service
-public class CreateUnidadeUseCase {
+public class FetchUnidadesUseCase {
 
     @Autowired
-    private UnidadeRepository unidadeRepository;
+    UnidadeRepository unidadeRepository;
 
-    public Unidade execute(Unidade unidade) {
-        return this.unidadeRepository.save(unidade);
+    public List<Unidade> execute() {
+        List<Unidade> unidades = unidadeRepository.findAll();
+        return unidades;
     }
 }

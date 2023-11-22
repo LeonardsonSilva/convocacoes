@@ -19,29 +19,30 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import com.defensoria.convocacao.entities.Unidade;
 import com.defensoria.convocacao.repositories.UnidadeRepository;
 import com.defensoria.convocacao.useCases.CreateUnidadeUseCase;
+import com.defensoria.convocacao.useCases.FetchUnidadesUseCase;
+import com.defensoria.convocacao.useCases.GetUnidadeUseCase;
 
 @RestController
 @RequestMapping("/unidades")
 public class UnidadeController {
+
     @Autowired
     UnidadeRepository unidadeRepository;
 
     @Autowired
-    private CreateUnidadeUseCase createUnidadeUseCase;
+    private FetchUnidadesUseCase fetchUnidadesUseCase;
 
-    @PostMapping
-    public ResponseEntity<Object> create(@RequestBody Unidade unidade) {
-        try {
-            this.createUnidadeUseCase.execute(unidade);
-            return ResponseEntity.status(HttpStatus.CREATED).build();
-        } catch (Exception error) {
-            return ResponseEntity.badRequest().body(error.getMessage());
-        }
-    }
+    @Autowired
+    private GetUnidadeUseCase getUnidadeUseCase;
+
+    @Autowired
+    private CreateUnidadeUseCase createUnidadeUseCase;
 
     @GetMapping
     public ResponseEntity<List<Unidade>> getAllUnidades() {
-        List<Unidade> unidades = unidadeRepository.findAll();
+
+        List<Unidade> unidades = this.fetchUnidadesUseCase.execute();
+
         if(!unidades.isEmpty()){
             for (Unidade unidade : unidades) {
                 UUID id = unidade.getId();
@@ -53,13 +54,23 @@ public class UnidadeController {
 
     @GetMapping("/unidades/{id}")
     public ResponseEntity<Object> getOneUnidade(@PathVariable(value = "id") UUID id) {
-        Optional<Unidade> unidade = unidadeRepository.findById(id);
+        Optional<Unidade> unidade = this.getUnidadeUseCase.execute(id);
+
         if(unidade.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Unidade not found.");
         }
-
         unidade.get().add(linkTo(methodOn(UnidadeController.class).getAllUnidades()).withRel("unidades"));
         return ResponseEntity.status(HttpStatus.OK).body(unidade.get());
+    }
+
+    @PostMapping
+    public ResponseEntity<Object> create(@RequestBody Unidade unidade) {
+        try {
+            this.createUnidadeUseCase.execute(unidade);
+            return ResponseEntity.status(HttpStatus.CREATED).build();
+        } catch (Exception error) {
+            return ResponseEntity.badRequest().body(error.getMessage());
+        }
     }
 
 }
