@@ -1,0 +1,19 @@
+@baseUrl = http://localhost:8080
+
+
+# @name list_orgaos
+GET {{baseUrl}}/orgaos
+
+###
+
+# # @name create_orgao
+# POST {{baseUrl}}/orgaos
+# Content-Type: application/json
+
+# {
+#     "nome": "Shopping Via Norte"
+# }
+
+# ###
+# # @name get_orgao
+# GET {{baseUrl}}/orgaos/d828a3b0-9529-4b9b-99f3-5b818b222c1f

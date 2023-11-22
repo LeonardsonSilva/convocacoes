@@ -12,8 +12,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "unidade")
-public class Unidade extends RepresentationModel<Unidade> implements Serializable {
+@Table(name = "orgao")
+public class Orgao extends RepresentationModel<Unidade> implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -33,5 +33,4 @@ public class Unidade extends RepresentationModel<Unidade> implements Serializabl
     public void setNome(String nome) {
         this.nome = nome;
     }
-
 }
