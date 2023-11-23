@@ -11,7 +11,7 @@ POST {{baseUrl}}/unidades
 Content-Type: application/json
 
 {
-    "nome": "Shopping Via Norte"
+    "nome": "Centro"
 }
 
 ###
