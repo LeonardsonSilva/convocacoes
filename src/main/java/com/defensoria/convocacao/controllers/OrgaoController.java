@@ -20,5 +20,4 @@ public class OrgaoController extends AbstractCrudController<Orgao, UUID> {
     public CrudService<Orgao, UUID> getService() {
         return this.OrgaoService;
     }
-
 }
