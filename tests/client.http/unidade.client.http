@@ -16,4 +16,5 @@ Content-Type: application/json
 
 ###
 # @name get_unidade
-GET {{baseUrl}}/unidades/d828a3b0-9529-4b9b-99f3-5b818b222c1f
+GET {{baseUrl}}/unidades/8
+

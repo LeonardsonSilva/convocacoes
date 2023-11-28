@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.defensoria.convocacao.exceptions.NotFoundException;
 import com.defensoria.convocacao.interfaces.CrudController;
 import com.defensoria.convocacao.interfaces.CrudService;
 import com.defensoria.convocacao.interfaces.UniqueEntityId;
@@ -32,6 +33,9 @@ public abstract class AbstractCrudController<T extends UniqueEntityId, ID> imple
     @GetMapping("/{id}")
     public ResponseEntity<T> findById(@PathVariable(value = "id") ID id) {
         Optional<T> instance = this.getService().findById(id);
+        if (instance.isEmpty()) {
+            throw new NotFoundException();
+        }
         return ResponseEntity.status(HttpStatus.OK).body(instance.get());
     }
 
