@@ -1,16 +1,15 @@
 package com.defensoria.convocacao.interfaces;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface CrudService<T, ID> {
     T create(T data);
 
     List<T> findAll();
 
-    Optional<T> findById(ID id);
+    T findById(ID id);
 
-    void save(T entity);
+    void save(T entity, ID id);
 
     void delete(ID id);
 }

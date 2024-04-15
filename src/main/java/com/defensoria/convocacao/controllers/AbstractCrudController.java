@@ -1,7 +1,6 @@
 package com.defensoria.convocacao.controllers;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.defensoria.convocacao.exceptions.NotFoundException;
 import com.defensoria.convocacao.interfaces.CrudController;
 import com.defensoria.convocacao.interfaces.CrudService;
 import com.defensoria.convocacao.interfaces.UniqueEntityId;
@@ -32,16 +30,13 @@ public abstract class AbstractCrudController<T extends UniqueEntityId, ID> imple
 
     @GetMapping("/{id}")
     public ResponseEntity<T> findById(@PathVariable(value = "id") ID id) {
-        Optional<T> instance = this.getService().findById(id);
-        if (instance.isEmpty()) {
-            throw new NotFoundException();
-        }
-        return ResponseEntity.status(HttpStatus.OK).body(instance.get());
+        T instance = this.getService().findById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(instance);
     }
 
     @PostMapping
-    public ResponseEntity<Object> create(@RequestBody T data){
-        T createdEntity = getService().create(data);
+    public ResponseEntity<Object> create(@RequestBody T body){
+        T createdEntity = getService().create(body);
         String uriResource = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(createdEntity.getId())
@@ -51,7 +46,8 @@ public abstract class AbstractCrudController<T extends UniqueEntityId, ID> imple
     }
 
     @PatchMapping
-    public ResponseEntity<Object> save(@RequestBody T entity ){
+    public ResponseEntity<Object> save(@RequestBody T entity){
+
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 

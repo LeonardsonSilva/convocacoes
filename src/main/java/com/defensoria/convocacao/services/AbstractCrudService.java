@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.defensoria.convocacao.exceptions.NotFoundException;
 import com.defensoria.convocacao.interfaces.CrudService;
 
 
@@ -23,13 +24,21 @@ public abstract class AbstractCrudService<T, ID> implements CrudService<T, ID> {
     }
 
     @Override
-    public Optional<T> findById(ID id) {
-        return getRepository().findById(id);
+    public T findById(ID id) {
+        Optional<T> instance = getRepository().findById(id);
+        if (instance.isEmpty()) {
+            throw new NotFoundException();
+        }
+        return instance.get();
     }
 
     @Override
-    public void save(T entity) {
-        getRepository().save(entity);
+    public void save(T data, ID id) {
+        Optional<T> instance = getRepository().findById(id);
+        if (instance.isEmpty()) {
+            throw new NotFoundException();
+        }
+        getRepository().save(data);
     }
 
     @Override
