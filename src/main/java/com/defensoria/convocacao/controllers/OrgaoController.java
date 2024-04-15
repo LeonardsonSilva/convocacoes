@@ -10,14 +10,14 @@ import com.defensoria.convocacao.interfaces.CrudService;
 import com.defensoria.convocacao.services.OrgaoService;
 
 @RestController
-@RequestMapping("/Orgaos")
+@RequestMapping("/orgaos")
 public class OrgaoController extends AbstractCrudController<Orgao, UUID> {
 
     @Autowired
-    private OrgaoService OrgaoService;
+    private OrgaoService orgaoService;
 
     @Override
     public CrudService<Orgao, UUID> getService() {
-        return this.OrgaoService;
+        return this.orgaoService;
     }
 }
