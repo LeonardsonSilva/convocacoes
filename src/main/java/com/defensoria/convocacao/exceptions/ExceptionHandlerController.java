@@ -15,11 +15,12 @@ public class ExceptionHandlerController {
 
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<ErrorMessageDTO> notFoundException(NotFoundException e) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorMessageDTO(e.getMessage()));
     }
 
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<ErrorMessageDTO> methodArgumentTypeMismatchException(MethodArgumentTypeMismatchException e) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorMessageDTO("Formato incompatível"));
+        // TODO: utilizar variáveis de ambiente para ter respostas genéricas ou mais detalhadas.
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorMessageDTO("Formato incompatível. " + e.getMessage()));
     }
 }
