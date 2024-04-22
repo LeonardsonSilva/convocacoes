@@ -20,4 +20,7 @@ Content-Type: application/json
 # @name get_unidade
 GET {{baseUrl}}/unidades/c0a662fc-f8f3-4ab3-8652-339fc4eeb4b5
 
+###
 
+# @name delete_unidade
+DELETE {{baseUrl}}/unidades/049df595-3ab8-4ee4-a1af-cda6f05b6cc
