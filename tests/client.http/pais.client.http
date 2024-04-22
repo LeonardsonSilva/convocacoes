@@ -1,0 +1,36 @@
+@baseUrl = http://localhost:8080
+
+
+# @name list_paises
+GET {{baseUrl}}/paises
+
+###
+
+# @name create_unidade
+POST {{baseUrl}}/paises
+Content-Type: application/json
+
+{
+    "nome": "Brasil"
+}
+
+###
+
+# @name update_unidade
+PATCH {{baseUrl}}/paises/049df595-3ab8-4ee4-a1af-cda6f05b6ccb
+Content-Type: application/json
+
+{
+    "nome": "aleixo",
+    "descricao": "Ao lado da Pemaza"
+}
+
+###
+
+# @name get_unidade
+GET {{baseUrl}}/paises/3fd7627f-a8cc-40eb-8512-11282d4bc78b
+
+###
+
+# @name delete_unidade
+DELETE {{baseUrl}}/paises/3fd7627f-a8cc-40eb-8512-11282d4bc78b
