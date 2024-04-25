@@ -11,13 +11,13 @@ POST {{baseUrl}}/unidades
 Content-Type: application/json
 
 {
-    "nome": "Alvorada",
+    "nome": "Centro",
     "orgaoId": "be770c2e-fecc-48ae-8449-82b4d99c47ef"
 }
 
 ###
 
 # @name get_unidade
-GET {{baseUrl}}/unidades/d828a3b0-9529-4b9b-99f3-5b818b222c11
+GET {{baseUrl}}/unidades/c0a662fc-f8f3-4ab3-8652-339fc4eeb4b5
 
 

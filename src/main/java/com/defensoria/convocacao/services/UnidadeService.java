@@ -7,7 +7,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.defensoria.convocacao.dtos.UnidadeDTO;
+import com.defensoria.convocacao.dtos.UnidadeRequestDTO;
 import com.defensoria.convocacao.entities.Orgao;
 import com.defensoria.convocacao.entities.Unidade;
 import com.defensoria.convocacao.exceptions.NotFoundException;
@@ -25,7 +25,7 @@ public class UnidadeService {
     private OrgaoRepository orgaoRepository;
 
 
-    public Unidade create(UnidadeDTO unidadeDTO) {
+    public Unidade create(UnidadeRequestDTO unidadeDTO) {
 
         Unidade unidade = new Unidade();
         Optional<Orgao> optionalOrgao = orgaoRepository.findById(unidadeDTO.orgaoId());
@@ -36,8 +36,8 @@ public class UnidadeService {
         return unidadeRepository.save(unidade);
     }
 
-    public List<Unidade> findAll() {
-        return unidadeRepository.findAll();
+    public <T> List<T> findAll(Class<T> projectionType) {
+        return orgaoRepository.findAllBy(projectionType);
     }
 
     public Unidade findById(UUID id) {

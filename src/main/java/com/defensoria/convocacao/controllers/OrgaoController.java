@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.defensoria.convocacao.entities.Orgao;
+import com.defensoria.convocacao.interfaces.OrgaoProjection;
+import com.defensoria.convocacao.interfaces.OrgaoProjection2;
 import com.defensoria.convocacao.services.OrgaoService;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,11 +31,16 @@ public class OrgaoController {
     private OrgaoService orgaoService;
 
     @GetMapping
-    public ResponseEntity<List<Orgao>> findAll() {
-        List<Orgao> instances = this.orgaoService.findAll();
-
+    public ResponseEntity<List<OrgaoProjection>> findAll() {
+        List<OrgaoProjection> instances = this.orgaoService.findAll(OrgaoProjection.class);
         return ResponseEntity.status(HttpStatus.OK).body(instances);
     }
+
+    // @GetMapping
+    // public ResponseEntity<List<OrgaoProjection2>> findAllWithDetail() {
+    //     List<OrgaoProjection2> instances = this.orgaoService.findAll(OrgaoProjection2.class);
+    //     return ResponseEntity.status(HttpStatus.OK).body(instances);
+    // }
 
     @GetMapping("/{id}")
     public ResponseEntity<Orgao> findById(@PathVariable(value = "id") UUID id) {
