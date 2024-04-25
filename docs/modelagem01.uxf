@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>763</x><y>0</y><w>147</w><h>133</h></coordinates><panel_attributes>Membro
+<diagram program="umletino" version="15.1"><zoom_level>5</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>620</x><y>0</y><w>105</w><h>95</h></coordinates><panel_attributes>Membro
 --
 - nome: TextField
 - matricula: TextField
@@ -10,7 +10,7 @@
 - criado_por: User
 - atualizado_em: DateTimeField
 - atualizado_por: User
-- ativo: BooleanField</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>196</x><y>287</y><w>196</w><h>70</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+- ativo: BooleanField</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>215</x><y>205</y><w>140</w><h>50</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 TipoOrgao
 --
 ORGAO_ADMINISTRACAO_SUPERIOR
@@ -18,7 +18,7 @@ ORGAO_ATUACAO
 ORGAO_EXECUCAO
 ORGAO_AUXILIAR
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>224</x><y>161</y><w>133</w><h>91</h></coordinates><panel_attributes>Atribuicao
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>235</x><y>115</y><w>95</w><h>65</h></coordinates><panel_attributes>Atribuicao
 --
 - descrição: TextField
 - publicacao: Publicacao
@@ -26,7 +26,7 @@ ORGAO_AUXILIAR
 - criado_por: User
 - atualizado_em: DateTimeField
 - atualizado_por: User
-- ativo: BooleanField</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>763</x><y>210</y><w>147</w><h>112</h></coordinates><panel_attributes>Lotado
+- ativo: BooleanField</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>620</x><y>150</y><w>105</w><h>80</h></coordinates><panel_attributes>Lotado
 --
 - observacao: TextField
 - data_inicio: DateField
@@ -36,7 +36,7 @@ ORGAO_AUXILIAR
 - criado_por: User
 - atualizado_em: DateTimeField
 - atualizado_por: User
-- ativo: BooleanField</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>203</x><y>644</y><w>147</w><h>91</h></coordinates><panel_attributes>Telefone
+- ativo: BooleanField</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>460</y><w>105</w><h>65</h></coordinates><panel_attributes>Telefone
 --
 - numero: TextField
 - descricao: TextField
@@ -45,11 +45,11 @@ ORGAO_AUXILIAR
 - atualizado_em: DateTimeField
 - atualizado_por: User
 - ativo: BooleanField
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>945</x><y>546</y><w>147</w><h>35</h></coordinates><panel_attributes>Zona
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>390</y><w>105</w><h>25</h></coordinates><panel_attributes>Zona
 --
 - nome: TextField
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>686</x><y>637</y><w>147</w><h>112</h></coordinates><panel_attributes>Endereco
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>565</x><y>455</y><w>105</w><h>80</h></coordinates><panel_attributes>Endereco
 --
 - logradouro: TextField
 - numero: BigIntegerField
@@ -62,24 +62,24 @@ ORGAO_AUXILIAR
 - ativo: BooleanField
 
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>385</x><y>301</y><w>126</w><h>35</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>215</y><w>90</w><h>25</h></coordinates><panel_attributes>lt=-
 m1=1..1
 m2=0..n
 
-</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>210</y><w>161</w><h>35</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>Relation</id><coordinates><x>325</x><y>150</y><w>115</w><h>25</h></coordinates><panel_attributes>lt=-
 m1=0..n
 m2=0..n
-</panel_attributes><additional_attributes>10;20;210;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>945</x><y>644</y><w>147</w><h>35</h></coordinates><panel_attributes>Bairro
+</panel_attributes><additional_attributes>10;20;210;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>460</y><w>105</w><h>25</h></coordinates><panel_attributes>Bairro
 --
 - nome: TextField
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1008</x><y>574</y><w>35</w><h>84</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>795</x><y>410</y><w>25</w><h>60</h></coordinates><panel_attributes>lt=-
 m1=0..n
 m2=1..1
-</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>826</x><y>651</y><w>133</w><h>35</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>665</x><y>465</y><w>95</w><h>25</h></coordinates><panel_attributes>lt=-
 m1=0..n
 m2=1..1
-</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>497</x><y>210</y><w>147</w><h>133</h></coordinates><panel_attributes>Orgao
+</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>430</x><y>150</y><w>105</w><h>95</h></coordinates><panel_attributes>Orgao
 --
 - nome: TextField
 - sigla: TextField
@@ -92,16 +92,16 @@ m2=1..1
 - atualizado_em: DateTimeField
 - atualizado_por: User
 - ativo: BooleanField
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>609</x><y>336</y><w>63</w><h>42</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>240</y><w>45</w><h>30</h></coordinates><panel_attributes>lt=-
 m1=0..n
 m2=0..n
-</panel_attributes><additional_attributes>10;10;10;40;50;40;50;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>42</x><y>301</y><w>147</w><h>70</h></coordinates><panel_attributes>Tipos de Órgãos:
+</panel_attributes><additional_attributes>10;10;10;40;50;40;50;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>105</x><y>215</y><w>105</w><h>50</h></coordinates><panel_attributes>Tipos de Órgãos:
 - Órgão de Administração Superior
 - Órgão de Atuação - Defensoria
 - Órgão de Atuação - Núcleo
 - Órgão de Execução
 - Órgão Auxiliar
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>441</x><y>574</y><w>147</w><h>133</h></coordinates><panel_attributes>Unidade
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>390</x><y>410</y><w>105</w><h>95</h></coordinates><panel_attributes>Unidade
 --
 - nome: TextField
 - descricao: TextField
@@ -113,27 +113,27 @@ bg=blue</panel_attributes><additional_attributes></additional_attributes></eleme
 - ativa: BooleanField
 
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>518</x><y>336</y><w>77</w><h>252</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>445</x><y>240</y><w>55</w><h>180</h></coordinates><panel_attributes>lt=-
 m1=0..n
 m2=0..n
-Funciona na &gt;</panel_attributes><additional_attributes>10;340;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>343</x><y>630</y><w>112</w><h>35</h></coordinates><panel_attributes>lt=-
+Funciona na &gt;</panel_attributes><additional_attributes>10;340;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>450</y><w>80</w><h>25</h></coordinates><panel_attributes>lt=-
 m1=0..n
 m2=0..n
-</panel_attributes><additional_attributes>10;20;140;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>945</x><y>455</y><w>147</w><h>35</h></coordinates><panel_attributes>Cidade
+</panel_attributes><additional_attributes>10;20;140;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>325</y><w>105</w><h>25</h></coordinates><panel_attributes>Cidade
 --
 - nome: TextField
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1008</x><y>483</y><w>35</w><h>77</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>795</x><y>345</y><w>25</w><h>55</h></coordinates><panel_attributes>lt=-
 m1=0..n
 m2=1..1
 
-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>581</x><y>637</y><w>119</w><h>35</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>455</y><w>85</w><h>25</h></coordinates><panel_attributes>lt=-
 m1=0..n
 m2=1..1
 
-</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>UMLNote</id><coordinates><x>1015</x><y>301</y><w>217</w><h>35</h></coordinates><panel_attributes>Tipos de Atuação:
+</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>UMLNote</id><coordinates><x>800</x><y>215</y><w>155</w><h>25</h></coordinates><panel_attributes>Tipos de Atuação:
 Titular, Substituto(a), Coordenador(a), Acumulando.
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>665</x><y>364</y><w>133</w><h>84</h></coordinates><panel_attributes>Vinculado
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>260</y><w>95</w><h>60</h></coordinates><panel_attributes>Vinculado
 --
 - publicacao: Publicacao
 - criado_em: DateTimeField
@@ -141,14 +141,14 @@ bg=blue</panel_attributes><additional_attributes></additional_attributes></eleme
 - atualizado_em: DateTimeField
 - atualizado_por: User
 - ativo: BooleanField
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>623</x><y>350</y><w>119</w><h>28</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>392</x><y>112</y><w>133</w><h>84</h></coordinates><panel_attributes>Possui
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>250</y><w>85</w><h>20</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>355</x><y>80</y><w>95</w><h>60</h></coordinates><panel_attributes>Possui
 --
 - publicacao: Publicacao
 - criado_em: DateTimeField
 - criado_por: User
 - atualizado_em: DateTimeField
 - atualizado_por: User
-- ativo: BooleanField</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>441</x><y>189</y><w>21</w><h>49</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>371</x><y>413</y><w>133</w><h>84</h></coordinates><panel_attributes>Funciona
+- ativo: BooleanField</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>135</y><w>15</w><h>35</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>295</y><w>95</w><h>60</h></coordinates><panel_attributes>Funciona
 --
 - publicacao: Publicacao
 - criado_em: DateTimeField
@@ -156,35 +156,35 @@ bg=blue</panel_attributes><additional_attributes></additional_attributes></eleme
 - atualizado_em: DateTimeField
 - atualizado_por: User
 - ativo: BooleanField
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>280</x><y>553</y><w>154</w><h>77</h></coordinates><panel_attributes>Exemplos:
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>275</x><y>395</y><w>110</w><h>55</h></coordinates><panel_attributes>Exemplos:
 - Bom Tempo
 - 24 de Maio
 - Belo Horizonte
 - Fórum Henoch Reis
 - Shopping Phillipe Daou
 - Etc...
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>1099</x><y>546</y><w>91</w><h>70</h></coordinates><panel_attributes>Exemplos de Zona:
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>860</x><y>390</y><w>65</w><h>50</h></coordinates><panel_attributes>Exemplos de Zona:
 - Zona Norte
 - Zona Sul
 - Zona Leste
 - Zona Oeste
 - Sem Classificação
 - etc...
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>70</x><y>161</y><w>147</w><h>70</h></coordinates><panel_attributes>Exemplos de Atribuição:
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>125</x><y>115</y><w>105</w><h>50</h></coordinates><panel_attributes>Exemplos de Atribuição:
 - Atendimento Direitos Humanos
 - Atendimento Idoso
 - Atendimento Coletivo
 - Atendimento Registros Públicos
 - etc...
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>581</x><y>315</y><w>280</w><h>322</h></coordinates><panel_attributes>lt=-
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>225</y><w>200</w><h>230</h></coordinates><panel_attributes>lt=-
 m1=0..n
 m2=0..1
-</panel_attributes><additional_attributes>360;10;360;430;10;430</additional_attributes></element><element><id>UMLNote</id><coordinates><x>840</x><y>399</y><w>441</w><h>35</h></coordinates><panel_attributes>A unidade que será selecionada deve estar vinculada ao órgão de atuação vinculado ao membro lotado.
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>497</x><y>441</y><w>42</w><h>28</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;40;20</additional_attributes></element><element><id>UMLNote</id><coordinates><x>0</x><y>105</y><w>371</w><h>49</h></coordinates><panel_attributes>Órgão que não possui atribuição:
+</panel_attributes><additional_attributes>360;10;360;430;10;430</additional_attributes></element><element><id>UMLNote</id><coordinates><x>675</x><y>285</y><w>315</w><h>25</h></coordinates><panel_attributes>A unidade que será selecionada deve estar vinculada ao órgão de atuação vinculado ao membro lotado.
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>430</x><y>315</y><w>30</w><h>20</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;40;20</additional_attributes></element><element><id>UMLNote</id><coordinates><x>75</x><y>75</y><w>265</w><h>35</h></coordinates><panel_attributes>Órgão que não possui atribuição:
 - COORDENADORIA NÚCLEO DE DEFENSORIA DA INFÂNCIA E JUVENTUDE - NUDECA
 - Centro Judiciário de Solução Consensual (CEJUSC) - Polo Avançado Manaus
 - Etc...
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1015</x><y>224</y><w>147</w><h>70</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>800</x><y>160</y><w>105</w><h>50</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 Atua
 --
 TITULAR
@@ -192,28 +192,28 @@ SUBSTITUTO
 COORDENADOR
 ACUMULACAO
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>903</x><y>259</y><w>126</w><h>28</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>185</y><w>90</w><h>20</h></coordinates><panel_attributes>lt=-
 m1=0..n
-m2=1..1</panel_attributes><additional_attributes>10;10;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>637</x><y>252</y><w>140</w><h>35</h></coordinates><panel_attributes>lt=-
+m2=1..1</panel_attributes><additional_attributes>10;10;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>530</x><y>180</y><w>100</w><h>25</h></coordinates><panel_attributes>lt=-
 m1=1..1
 m2=0..n
-</panel_attributes><additional_attributes>10;20;180;20</additional_attributes></element><element><id>Relation</id><coordinates><x>826</x><y>126</y><w>35</w><h>98</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;20;180;20</additional_attributes></element><element><id>Relation</id><coordinates><x>665</x><y>90</y><w>25</w><h>70</h></coordinates><panel_attributes>lt=-
 m1=1..1
 m2=0..n
-</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLNote</id><coordinates><x>539</x><y>483</y><w>287</w><h>49</h></coordinates><panel_attributes>Um órgão pode estar vinculado a outro órgão (Núcleo)
+</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLNote</id><coordinates><x>460</x><y>345</y><w>205</w><h>35</h></coordinates><panel_attributes>Um órgão pode estar vinculado a outro órgão (Núcleo)
 Obs.: somente se o orgão atuar como Defensoria de 1a e 2a Instância.
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>98</y><w>147</w><h>63</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>475</x><y>70</y><w>105</w><h>45</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 TipoOrgaoAtuacao
 --
 DEFENSORIA_1_INSTANCIA
 DEFENSORIA_2_INSTANCIA
 NUCLEO
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>483</x><y>42</y><w>259</w><h>49</h></coordinates><panel_attributes>Se o órgão for de atuação ele pode atuar em uma das opções:
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>420</x><y>30</y><w>185</w><h>35</h></coordinates><panel_attributes>Se o órgão for de atuação ele pode atuar em uma das opções:
 - Defensoria de 1a Instância
 - Defensoria de 2a Instância
 - Núcleo
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>616</x><y>154</y><w>35</w><h>70</h></coordinates><panel_attributes>lt=-
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>515</x><y>110</y><w>25</w><h>50</h></coordinates><panel_attributes>lt=-
 m1=0..n
 m2=0..1
 </panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element></diagram>

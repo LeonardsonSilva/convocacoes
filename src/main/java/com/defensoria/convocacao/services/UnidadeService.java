@@ -1,22 +1,62 @@
 package com.defensoria.convocacao.services;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import com.defensoria.convocacao.dtos.UnidadeDTO;
+import com.defensoria.convocacao.entities.Orgao;
 import com.defensoria.convocacao.entities.Unidade;
+import com.defensoria.convocacao.exceptions.NotFoundException;
+import com.defensoria.convocacao.repositories.OrgaoRepository;
 import com.defensoria.convocacao.repositories.UnidadeRepository;
 
+
 @Service
-public class UnidadeService extends AbstractCrudService<Unidade, UUID> {
+public class UnidadeService {
 
     @Autowired
     private UnidadeRepository unidadeRepository;
 
-    @Override
-    protected JpaRepository<Unidade, UUID> getRepository() {
-        return this.unidadeRepository;
+    @Autowired
+    private OrgaoRepository orgaoRepository;
+
+
+    public Unidade create(UnidadeDTO unidadeDTO) {
+
+        Unidade unidade = new Unidade();
+        Optional<Orgao> optionalOrgao = orgaoRepository.findById(unidadeDTO.orgaoId());
+
+        unidade.setNome(unidadeDTO.nome());
+        unidade.setOrgao(optionalOrgao.get());
+
+        return unidadeRepository.save(unidade);
+    }
+
+    public List<Unidade> findAll() {
+        return unidadeRepository.findAll();
+    }
+
+    public Unidade findById(UUID id) {
+        Optional<Unidade> instance = unidadeRepository.findById(id);
+        if (instance.isEmpty()) {
+            throw new NotFoundException();
+        }
+        return instance.get();
+    }
+
+    public void save(Unidade data, UUID id) {
+        Optional<Unidade> instance = unidadeRepository.findById(id);
+        if (instance.isEmpty()) {
+            throw new NotFoundException();
+        }
+        unidadeRepository.save(data);
+    }
+
+    public void delete(UUID id) {
+        unidadeRepository.deleteById(id);
     }
 }

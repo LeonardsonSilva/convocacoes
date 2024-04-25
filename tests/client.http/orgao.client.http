@@ -6,13 +6,13 @@ GET {{baseUrl}}/orgaos
 
 ###
 
-# # @name create_orgao
-# POST {{baseUrl}}/orgaos
-# Content-Type: application/json
+# @name create_orgao
+POST {{baseUrl}}/orgaos
+Content-Type: application/json
 
-# {
-#     "nome": "Shopping Via Norte"
-# }
+{
+    "nome": "Shopping Via Norte"
+}
 
 # ###
 # # @name get_orgao

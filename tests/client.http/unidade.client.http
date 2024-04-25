@@ -11,7 +11,8 @@ POST {{baseUrl}}/unidades
 Content-Type: application/json
 
 {
-    "nome": "Centro"
+    "nome": "Alvorada",
+    "orgaoId": "be770c2e-fecc-48ae-8449-82b4d99c47ef"
 }
 
 ###

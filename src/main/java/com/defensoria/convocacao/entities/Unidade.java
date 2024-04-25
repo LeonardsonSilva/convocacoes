@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,6 +23,10 @@ public class Unidade implements UniqueEntityId {
 
     private String nome;
 
+    @ManyToOne
+    @JoinColumn(name = "orgao_id", nullable = false)
+    private Orgao orgao;
+
     public UUID getId() {
         return id;
     }
@@ -31,6 +37,14 @@ public class Unidade implements UniqueEntityId {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Orgao getOrgao() {
+        return this.orgao;
+    }
+
+    public void setOrgao(Orgao orgao) {
+        this.orgao = orgao;
     }
 
 }
