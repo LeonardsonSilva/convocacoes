@@ -1,0 +1,38 @@
+@baseUrl = http://localhost:8080
+
+
+# @name list_estados
+GET {{baseUrl}}/estados
+
+###
+
+# @name create_estado
+POST {{baseUrl}}/estados
+Content-Type: application/json
+
+{
+    "nome": "Amazonas",
+    "uf": "AM",
+    "paisId": "db45943b-5b71-4a38-8006-5bc8dda501c8"
+}
+
+###
+
+# @name update_estado
+PATCH {{baseUrl}}/estados/049df595-3ab8-4ee4-a1af-cda6f05b6ccb
+Content-Type: application/json
+
+{
+    "nome": "aleixo",
+    "descricao": "Ao lado da Pemaza"
+}
+
+###
+
+# @name get_estado
+GET {{baseUrl}}/estados/049df595-3ab8-4ee4-a1af-cda6f05b6cc
+
+###
+
+# @name delete_estado
+DELETE {{baseUrl}}/estados/3b48f3a4-deae-4a1a-90fd-ea4264150367

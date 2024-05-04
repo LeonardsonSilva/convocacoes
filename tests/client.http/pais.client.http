@@ -6,7 +6,7 @@ GET {{baseUrl}}/paises
 
 ###
 
-# @name create_unidade
+# @name create_pais
 POST {{baseUrl}}/paises
 Content-Type: application/json
 
@@ -16,7 +16,7 @@ Content-Type: application/json
 
 ###
 
-# @name update_unidade
+# @name update_pais
 PATCH {{baseUrl}}/paises/049df595-3ab8-4ee4-a1af-cda6f05b6ccb
 Content-Type: application/json
 
@@ -27,10 +27,10 @@ Content-Type: application/json
 
 ###
 
-# @name get_unidade
+# @name get_pais
 GET {{baseUrl}}/paises/3fd7627f-a8cc-40eb-8512-11282d4bc78b
 
 ###
 
-# @name delete_unidade
+# @name delete_pais
 DELETE {{baseUrl}}/paises/3fd7627f-a8cc-40eb-8512-11282d4bc78b
