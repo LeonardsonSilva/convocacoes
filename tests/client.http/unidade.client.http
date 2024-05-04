@@ -11,14 +11,24 @@ POST {{baseUrl}}/unidades
 Content-Type: application/json
 
 {
-    "nome": "Centro",
-    "orgaoId": "be770c2e-fecc-48ae-8449-82b4d99c47ef"
+    "nome": "Aleixo"
+}
+
+###
+
+# @name update_unidade
+PATCH {{baseUrl}}/unidades/049df595-3ab8-4ee4-a1af-cda6f05b6ccb
+Content-Type: application/json
+
+{
+    "nome": "aleixo",
+    "descricao": "Ao lado da Pemaza"
 }
 
 ###
 
 # @name get_unidade
-GET {{baseUrl}}/unidades/c0a662fc-f8f3-4ab3-8652-339fc4eeb4b5
+GET {{baseUrl}}/unidades/049df595-3ab8-4ee4-a1af-cda6f05b6cc
 
 ###
 
