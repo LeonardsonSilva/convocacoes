@@ -26,8 +26,6 @@ public class Unidade implements UniqueEntityId {
 
     private String nome;
 
-    private String descricao;
-
     @ManyToOne
     @JoinColumn(name = "orgao_id", nullable = false)
     private Orgao orgao;
@@ -42,14 +40,6 @@ public class Unidade implements UniqueEntityId {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 
     public Orgao getOrgao() {

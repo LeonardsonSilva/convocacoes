@@ -34,9 +34,6 @@ public class Estado implements UniqueEntityId {
     @JoinColumn(name = "pais_id", nullable = false)
     private Pais pais;
 
-    @Column(name = "pais_id")
-    private UUID paisId;
-
     public String getNome() {
         return this.nome;
     }

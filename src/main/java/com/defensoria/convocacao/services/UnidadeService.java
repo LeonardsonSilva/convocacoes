@@ -36,8 +36,8 @@ public class UnidadeService {
         return unidadeRepository.save(unidade);
     }
 
-    public <T> List<T> findAll(Class<T> projectionType) {
-        return orgaoRepository.findAllBy(projectionType);
+    public List<Unidade> findAll() {
+        return unidadeRepository.findAll();
     }
 
     public Unidade findById(UUID id) {

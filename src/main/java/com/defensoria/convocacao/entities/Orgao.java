@@ -2,6 +2,8 @@ package com.defensoria.convocacao.entities;
 
 import java.util.UUID;
 
+import org.hibernate.envers.Audited;
+
 import com.defensoria.convocacao.interfaces.UniqueEntityId;
 
 import jakarta.persistence.Entity;
@@ -12,6 +14,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "orgao")
+@Audited
 public class Orgao implements UniqueEntityId {
     private static final long serialVersionUID = 1L;
 

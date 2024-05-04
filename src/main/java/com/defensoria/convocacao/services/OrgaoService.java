@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.defensoria.convocacao.entities.Orgao;
 import com.defensoria.convocacao.exceptions.NotFoundException;
-import com.defensoria.convocacao.interfaces.OrgaoProjection;
 import com.defensoria.convocacao.repositories.OrgaoRepository;
 
 
@@ -24,8 +23,8 @@ public class OrgaoService {
         return orgaoRepository.save(orgao);
     }
 
-    public <T> List<T> findAll(Class<T> projectionType) {
-        return orgaoRepository.findAllBy(projectionType);
+    public List<Orgao> findAll() {
+        return orgaoRepository.findAll();
     }
 
     public Orgao findById(UUID id) {

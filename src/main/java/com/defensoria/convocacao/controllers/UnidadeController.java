@@ -12,7 +12,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.defensoria.convocacao.dtos.UnidadeRequestDTO;
 import com.defensoria.convocacao.entities.Unidade;
-import com.defensoria.convocacao.interfaces.UnidadeProjection;
 import com.defensoria.convocacao.services.UnidadeService;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,8 +30,8 @@ public class UnidadeController {
     private UnidadeService unidadeService;
 
     @GetMapping
-    public ResponseEntity<List<UnidadeProjection>> findAll() {
-        List<UnidadeProjection> instances = this.unidadeService.findAll(UnidadeProjection.class);
+    public ResponseEntity<List<Unidade>> findAll() {
+        List<Unidade> instances = this.unidadeService.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(instances);
     }
 
@@ -43,7 +42,7 @@ public class UnidadeController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> create(@RequestBody UnidadeRequestDTO body){
+    public ResponseEntity<Unidade> create(@RequestBody UnidadeRequestDTO body){
         Unidade createdEntity = unidadeService.create(body);
         String uriResource = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
@@ -54,13 +53,13 @@ public class UnidadeController {
     }
 
     @PatchMapping
-    public ResponseEntity<Object> save(@RequestBody Unidade entity){
+    public ResponseEntity<Unidade> save(@RequestBody Unidade entity){
 
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> delete(@PathVariable(value = "id") UUID id){
+    public ResponseEntity<Unidade> delete(@PathVariable(value = "id") UUID id){
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
