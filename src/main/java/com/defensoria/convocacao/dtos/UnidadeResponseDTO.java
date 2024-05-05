@@ -1,4 +1,6 @@
 package com.defensoria.convocacao.dtos;
 
-public record UnidadeResponseDTO(String nome, String orgaoNome) {
+import java.util.UUID;
+
+public record UnidadeResponseDTO(UUID id, String nome, OrgaoResponseDTO orgao) {
 }

@@ -28,27 +28,27 @@ public class OrgaoController {
     @Autowired
     private OrgaoService orgaoService;
 
+    @PostMapping
+    public ResponseEntity<Object> create(@RequestBody Orgao body){
+        Orgao entityPersisted = orgaoService.create(body);
+        String uriResource = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(entityPersisted.getId())
+                .toUriString();
+
+        return ResponseEntity.status(HttpStatus.CREATED).location(java.net.URI.create(uriResource)).build();
+    }
+
     @GetMapping
     public ResponseEntity<List<Orgao>> findAll() {
-        List<Orgao> instances = this.orgaoService.findAll();
-        return ResponseEntity.status(HttpStatus.OK).body(instances);
+        List<Orgao> entitiesFetched = this.orgaoService.findAll();
+        return ResponseEntity.status(HttpStatus.OK).body(entitiesFetched);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Orgao> findById(@PathVariable(value = "id") UUID id) {
-        Orgao instance = this.orgaoService.findById(id);
-        return ResponseEntity.status(HttpStatus.OK).body(instance);
-    }
-
-    @PostMapping
-    public ResponseEntity<Object> create(@RequestBody Orgao body){
-        Orgao createdEntity = orgaoService.create(body);
-        String uriResource = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(createdEntity.getId())
-                .toUriString();
-
-        return ResponseEntity.status(HttpStatus.CREATED).location(java.net.URI.create(uriResource)).build();
+        Orgao entityGetted = this.orgaoService.findById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(entityGetted);
     }
 
     @PatchMapping

@@ -11,7 +11,8 @@ POST {{baseUrl}}/unidades
 Content-Type: application/json
 
 {
-    "nome": "Aleixo"
+    "nome": "Aleixo",
+    "orgaoId": "2793a339-506d-45f6-bad8-b91ed8e6dbb3"
 }
 
 ###

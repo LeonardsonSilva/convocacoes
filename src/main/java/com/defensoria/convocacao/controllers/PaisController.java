@@ -28,27 +28,27 @@ public class PaisController {
     @Autowired
     private PaisService paisService;
 
+    @PostMapping
+    public ResponseEntity<Object> create(@RequestBody Pais body){
+        Pais entityPersisted = paisService.create(body);
+        String uriResource = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(entityPersisted.getId())
+                .toUriString();
+
+        return ResponseEntity.status(HttpStatus.CREATED).location(java.net.URI.create(uriResource)).build();
+    }
+
     @GetMapping
     public ResponseEntity<List<Pais>> findAll() {
-        List<Pais> instances = this.paisService.findAll();
-        return ResponseEntity.status(HttpStatus.OK).body(instances);
+        List<Pais> entitiesFetched = this.paisService.findAll();
+        return ResponseEntity.status(HttpStatus.OK).body(entitiesFetched);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Pais> findById(@PathVariable(value = "id") UUID id) {
-        Pais instance = this.paisService.findById(id);
-        return ResponseEntity.status(HttpStatus.OK).body(instance);
-    }
-
-    @PostMapping
-    public ResponseEntity<Object> create(@RequestBody Pais body){
-        Pais createdEntity = paisService.create(body);
-        String uriResource = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(createdEntity.getId())
-                .toUriString();
-
-        return ResponseEntity.status(HttpStatus.CREATED).location(java.net.URI.create(uriResource)).build();
+        Pais entityGetted = this.paisService.findById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(entityGetted);
     }
 
     @PatchMapping

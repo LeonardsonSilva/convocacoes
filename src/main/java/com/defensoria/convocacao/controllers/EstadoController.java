@@ -28,27 +28,27 @@ public class EstadoController {
     @Autowired
     private EstadoService estadoService;
 
+    @PostMapping
+    public ResponseEntity<Object> create(@RequestBody Estado body){
+        Estado entityPersisted = estadoService.create(body);
+        String uriResource = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(entityPersisted.getId())
+                .toUriString();
+
+        return ResponseEntity.status(HttpStatus.CREATED).location(java.net.URI.create(uriResource)).build();
+    }
+
     @GetMapping
     public ResponseEntity<List<Estado>> findAll() {
-        List<Estado> instances = this.estadoService.findAll();
-        return ResponseEntity.status(HttpStatus.OK).body(instances);
+        List<Estado> entitiesFetched = this.estadoService.findAll();
+        return ResponseEntity.status(HttpStatus.OK).body(entitiesFetched);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Estado> findById(@PathVariable(value = "id") UUID id) {
-        Estado instance = this.estadoService.findById(id);
-        return ResponseEntity.status(HttpStatus.OK).body(instance);
-    }
-
-    @PostMapping
-    public ResponseEntity<Object> create(@RequestBody Estado body){
-        Estado createdEntity = estadoService.create(body);
-        String uriResource = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(createdEntity.getId())
-                .toUriString();
-
-        return ResponseEntity.status(HttpStatus.CREATED).location(java.net.URI.create(uriResource)).build();
+        Estado entityGetted = this.estadoService.findById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(entityGetted);
     }
 
     @PatchMapping
