@@ -26,7 +26,7 @@ public class OrgaoControllerTest {
             }
         """;
 
-        mockMvc.perform(MockMvcRequestBuilders.post("/orgaos")
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/orgaos")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(orgaoJson)
         ).andExpect(MockMvcResultMatchers.status().isCreated());

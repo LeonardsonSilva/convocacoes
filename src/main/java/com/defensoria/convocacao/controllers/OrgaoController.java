@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.defensoria.convocacao.configs.ApiV1;
 import com.defensoria.convocacao.entities.Orgao;
 import com.defensoria.convocacao.services.OrgaoService;
 
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
+@ApiV1
 @RestController
 @RequestMapping("/orgaos")
 public class OrgaoController {
