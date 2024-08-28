@@ -33,7 +33,7 @@ public class UnidadeController {
     private UnidadeService unidadeService;
 
     @PostMapping
-    public ResponseEntity<Unidade> create(@RequestBody UnidadeRequestDTO body){
+    public ResponseEntity<Unidade> create(@RequestBody UnidadeRequestDTO body) {
         Unidade entityPersisted = unidadeService.create(body);
         String uriResource = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
@@ -44,22 +44,10 @@ public class UnidadeController {
     }
 
     @GetMapping
-    public ResponseEntity<List<UnidadeResponseDTO>> findAll() {
+    public ResponseEntity<List<Unidade>> findAll() {
 
         List<Unidade> entitiesFetched = this.unidadeService.findAll();
-        List<UnidadeResponseDTO> unidadesResponseDTO = new ArrayList<UnidadeResponseDTO>();
-
-        for (Unidade unidade : entitiesFetched) {
-            OrgaoResponseDTO orgaoResponseDTO = new OrgaoResponseDTO(unidade.getOrgao().getNome());
-            unidadesResponseDTO.add(
-                new UnidadeResponseDTO(
-                    unidade.getId(),
-                    unidade.getNome(),
-                    orgaoResponseDTO
-                )
-            );
-        }
-        return ResponseEntity.status(HttpStatus.OK).body(unidadesResponseDTO);
+        return ResponseEntity.status(HttpStatus.OK).body(entitiesFetched);
     }
 
     @GetMapping("/{id}")
@@ -69,13 +57,13 @@ public class UnidadeController {
     }
 
     @PatchMapping
-    public ResponseEntity<Unidade> save(@RequestBody Unidade entity){
+    public ResponseEntity<Unidade> save(@RequestBody Unidade entity) {
 
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Unidade> delete(@PathVariable(value = "id") UUID id){
+    public ResponseEntity<Unidade> delete(@PathVariable(value = "id") UUID id) {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

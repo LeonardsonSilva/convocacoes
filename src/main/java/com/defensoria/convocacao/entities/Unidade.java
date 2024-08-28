@@ -27,7 +27,7 @@ public class Unidade implements UniqueEntityId {
 
     private String nome;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    // @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "orgao_id", nullable = false)
     private Orgao orgao;
 
