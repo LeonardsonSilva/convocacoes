@@ -1,13 +1,7 @@
 services:
 
-  java:
-    image: java:1.0.0
-    build:
-      context: .
-      dockerfile: ./docker/java/Dockerfile
-
   web:
-    image: web:1.0.0
+    image: convocacoes-web:1.0.0
     build:
       context: .
       dockerfile: ./docker/web/Dockerfile
@@ -16,5 +10,3 @@ services:
     volumes:
       - .:/app
       - ./.m2/:/root/.m2/repository/
-    depends_on:
-      - java

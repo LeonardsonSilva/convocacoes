@@ -1,6 +1,5 @@
 package com.defensoria.convocacao.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -11,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.defensoria.convocacao.dtos.OrgaoResponseDTO;
 import com.defensoria.convocacao.dtos.UnidadeRequestDTO;
-import com.defensoria.convocacao.dtos.UnidadeResponseDTO;
 import com.defensoria.convocacao.entities.Unidade;
 import com.defensoria.convocacao.services.UnidadeService;
 
